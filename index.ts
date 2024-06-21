@@ -6,6 +6,8 @@ const port = process.env.PORT || 4032
 
 import numberRouter from './routes/number.route'
 
+console.log(process.env.DATABASE_URL)
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
