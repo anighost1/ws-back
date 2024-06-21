@@ -24,7 +24,6 @@ async function sendInitialData(ws: WebSocket) {
 }
 
 const webSocketConfig = (server: Server) => {
-console.log(process.env.DATABASE_URL)
     // Handle WebSocket connections
     server.on('upgrade', (request, socket, head) => {
         wss.handleUpgrade(request, socket, head, (ws: WebSocket) => {
