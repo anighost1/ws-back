@@ -3,8 +3,9 @@ import { WebSocketServer, WebSocket } from 'ws';
 import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
+const dbUrl = process.env.DATABASE_URL
 const pgClient = new PgClient({
-    connectionString: String(process.env.DATABASE_URL) || '',
+    connectionString: dbUrl,
 });
 
 // PostgreSQL client for listening to notifications
