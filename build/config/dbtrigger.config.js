@@ -14,7 +14,7 @@ const ws_1 = require("ws");
 const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
 const pgClient = new pg_1.Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: String(process.env.DATABASE_URL),
 });
 // PostgreSQL client for listening to notifications
 const dbTrigger = (wss) => {
