@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
 const pgClient = new PgClient({
-    connectionString: String(process.env.DATABASE_URL),
+    connectionString: String(process.env.DATABASE_URL || ''),
 });
 
 // PostgreSQL client for listening to notifications
